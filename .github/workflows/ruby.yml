@@ -20,6 +20,17 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
+    - name: Setup PostgreSQL with Postgis
+      uses: huaxk/postgis-action@v1.0.0
+      with:
+        # Version of PostgreSQL to use
+        postgresql version: # optional, default is latest
+        # POSTGRES_DB - name for the default database that is created
+        postgresql db: # optional, default is 
+        # POSTGRES_USER - create the specified user with superuser power
+        postgresql user: # optional, default is 
+        # POSTGRES_PASSWORD - superuser password
+        postgresql password: # optional, default is 
     - name: Set up Ruby
     # To automatically get bug fixes and new Ruby versions for ruby/setup-ruby,
     # change this to (see https://github.com/ruby/setup-ruby#versioning):
